@@ -66,7 +66,7 @@ class ImportRule{
 	 * @param string $importKey
 	 * @return array|null  Array with
 	 */
-	function idrGetDiscountFromCSV($filePath, $srcEncoding = 'latin1', $importKey='ecImportDiscountRule',$startLine,$endLine = 0 ) {
+	function idrGetDiscountFromCSV($filePath = '', $srcEncoding = 'latin1', $importKey='ecImportDiscountRule',$startLine,$endLine = 0 ) {
 
 		/*
 			Import / DiscountRules (création des règles de prix).

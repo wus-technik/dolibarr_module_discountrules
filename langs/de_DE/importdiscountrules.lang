@@ -15,115 +15,115 @@
 #
 # IMPORT DISCOUNTRULE
 #
-idrImportDiscountRules=Import des règles de prix
-PickCSVFile=Fichier à importer
-SelectFileEncoding=Sélection du type d'encodage
-Columns=Colonnes
-help=Aide
-errors=Des erreurs se sont produites
-importDone=Import terminé
-DownloadEmptyExample=Télécharger le fichier d'exemple
-refproduct=Référence produit
-refwarehouse=Référence entrepôt
-batch=lot/série
-qty=Quantité
-startLine=Importer les lignes à la position (de - à)
-SetThisValueTo2ToExcludeFirstLine=Par exemple, fixez cette valeur à 3 pour exclure les 2 premières lignes.<br>Si les lignes d'en-tête ne sont pas exclues, cela donnera lieu à de multiples erreurs dans la Simulation d'Import
-KeepEmptyToGoToEndOfFile=Laissez ce champ vide pour aller jusqu'à la fin du fichier
-startmustbeInferior=Le numéro de début de ligne ne doit pas être supérieur à celui de fin
-startafterendOffileLine=Le numéro de début de ligne ne doit pas être supérieur à la somme des lignes du fichier
-SubmitCSVForImport=Importer le fichier dans dolibarr
+idrImportDiscountRules=Import der Preisregeln
+PickCSVFile=Zu importierende Datei
+SelectFileEncoding=Auswahl des Zeichensatzes
+Columns=Spalten
+help=Hilfe
+errors=Es sind Fehler aufgetreten
+importDone=Import abgeschlossen
+DownloadEmptyExample=Beispieldatei herunterladen
+refproduct=Produktreferenz
+refwarehouse=Lagerreferenz
+batch=Los/Serie
+qty=Menge
+startLine=Zeilen an Position importieren (von - bis)
+SetThisValueTo2ToExcludeFirstLine=Zum Beispiel setzen Sie diesen Wert auf 3, um die ersten 2 Zeilen auszuschließen.<br>Wenn die Kopfzeilen nicht ausgeschlossen werden, führt dies zu mehreren Fehlern in der Import-Simulation
+KeepEmptyToGoToEndOfFile=Lassen Sie dieses Feld leer, um bis zum Ende der Datei zu gehen
+startmustbeInferior=Die Startzeilennummer darf nicht größer als die Endzeilennummer sein
+startafterendOffileLine=Die Startzeilennummer darf nicht größer als die Gesamtzahl der Zeilen in der Datei sein
+SubmitCSVForImport=Datei in Dolibarr importieren
 
 
 #
-# aide et descriptifs
+# Hilfe und Beschreibungen
 #
-TechDescCsvTitle=Caractéristiques techniques du CSV
-NumbersubTitle=Nombres:
-Numbersub-1=décimales séparées par un point (4.8)
-Numbersub-2=sans unité (175)
-Numbersub-3=sans séparateur de milliers (30000)
-EncodeCharsSubTitle=Encodage du jeu de caractères
-EncodeCharsSubTitle-2=À sélectionner dans la liste déroulante. Choisir le bon encodage évite les erreurs sur les caractères accentués.<br> Si le logiciel qui génère le fichier CSV vous le permet, choisissez l’encodage <span class="character">UTF-8</span> lors de l’export en CSV.
-FieldSeparatorsubTitle=<b>Séparateur de champs</b> :point-virgule (<span class="character">%s</span>)
-catSeparatorsubTitle=<b>Séparateur de catégories </b> :virgule (<span class="character">%s</span>)
-StringSeparatorsubTitle=<b>Séparateur de chaînes de caractères</b> : double-quote (<span class="character">"</span>)
-EOLsubTitle=<b>Fin de ligne</b> : type Windows (CRLF)
+TechDescCsvTitle=Technische Eigenschaften der CSV-Datei
+NumbersubTitle=Zahlen:
+Numbersub-1=Dezimalstellen durch Punkt getrennt (4.8)
+Numbersub-2=ohne Einheit (175)
+Numbersub-3=ohne Tausendertrennzeichen (30000)
+EncodeCharsSubTitle=Zeichensatz-Kodierung
+EncodeCharsSubTitle-2=Aus der Dropdown-Liste auswählen. Die richtige Kodierung zu wählen vermeidet Fehler bei akzentuierten Zeichen.<br> Wenn die Software, die die CSV-Datei generiert, es erlaubt, wählen Sie die Kodierung <span class="character">UTF-8</span> beim CSV-Export.
+FieldSeparatorsubTitle=<b>Feldtrennzeichen</b>: Semikolon (<span class="character">%s</span>)
+catSeparatorsubTitle=<b>Kategorietrennzeichen</b>: Komma (<span class="character">%s</span>)
+StringSeparatorsubTitle=<b>Zeichenketten-Trennzeichen</b>: Anführungszeichen (<span class="character">"</span>)
+EOLsubTitle=<b>Zeilenende</b>: Windows-Typ (CRLF)
 
 #
-# errors
+# Fehler
 #
-EmptyLabelError=Ligne %s : Le <b>libellé</b> de la remise de prix est vide.
-ProductRefAndCatProductError=Ligne %s : La colonne référence du produit et la colonne des catégories de produit ne peuvent pas être renseignées toutes les deux.
-CompanyRefAndCatCompanytError=Ligne %s : La colonne référence du client et la colonne des catégories de client ne peuvent pas être renseignées toutes les deux.
-CompanyRefError=Ligne %s :  La référence cliente <b>%s</b> n'existe pas.
-catProductRefError=Ligne %s :  La catégorie de produit <b>%s</b> n'existe pas.
-ProductRefError=Ligne %s :  La référence produit <b>%s</b> n'existe pas.
-catCompanyRefError=Ligne %s :  La catégorie de client <b>%s</b> n'existe pas.
-ProjectRefError=Ligne %s :  La référence du projet <b>%s</b> n'existe pas.
-countryCodefError=Ligne %s : Le code du pays <b>%s</b> n'existe pas.
-priorityRankNumberError=Ligne %s :  Le rang de priorité <b>%s</b> n'est pas un numérique valide.
-priorityRankNumberLevelPrioError=Ligne %s :  Le rang de priorité <b>%s</b> doit être compris entre 1 et 5.
-priorityRankNumberLevelNegativeValueError=Ligne %s :  Le rang de priorité <b>%s</b> doit être compris entre 1 et 5.<br> Laissez cette colonne vide si vous ne voulez pas assigner de priorité.
-reductionTypeNumericError=Ligne %s : La réduction  <b>%s</b> n'est pas un numérique valide.
-productPriceAndRefProductNotPresentError=Ligne %s : La colonne product price est renseignée <b>%s</b> mais vous n'avez pas renseigné la reference du produit pour cette ligne.
-productPriceTypeNumericError=Ligne %s : Le prix du produit  <b>%s</b> n'est pas un numérique valide.
-FromQtyTypeNumericError=Ligne %s : La colonne À partir de la quantité  <b>%s</b> n'est pas un numérique valide.
-productReducAmountTypeNumericError=Ligne %s : Le montant de remise fixe  <b>%s</b> n'est pas un numérique valide.
-atLeastOneofThemToRuleTheProductError=Ligne %s : Vous devez définir au moins un de ces champs : <b>Remise en pourcentage</b>, <b>Le prix HT à appliquer</b>, <b>Le montant de remise fixe</b>.
-NoPriceIfNoProductInsertedError=Ligne %s : La cellule <b>prix HT à appliquer</b> est renseignée mais pas la cellule <b>référence produit</b> associée.
-NoReductionError=Ligne %s : La cellule  <b>Remise en pourcentage</b> ne doit pas être vide.
-cTypeEntError=Ligne %s : Le type de tiers : <b>%s</b> n'existe pas.
-dateFromFormatError=Ligne %s : La date de début : <b>%s</b> n'est pas au bon format jj/mm/aaaa.
-dateToFormatError=Ligne %s : La date de fin : <b>%s</b> n'est pas au bon format jj/mm/aaaa.
-CreateDiscountRuleError=Ligne %s : La création de la règle de prix : %s  a échouée. <br>erreur sql :  %s.<br>
-CSVDiscountRuleCreateSuccess=Ligne %s : Création de la règle de prix : %s.
+EmptyLabelError=Zeile %s: Die <b>Bezeichnung</b> der Preisreduzierung ist leer.
+ProductRefAndCatProductError=Zeile %s: Die Spalte Produktreferenz und die Spalte Produktkategorien können nicht beide ausgefüllt sein.
+CompanyRefAndCatCompanytError=Zeile %s: Die Spalte Kundenreferenz und die Spalte Kundenkategorien können nicht beide ausgefüllt sein.
+CompanyRefError=Zeile %s: Die Kundenreferenz <b>%s</b> existiert nicht.
+catProductRefError=Zeile %s: Die Produktkategorie <b>%s</b> existiert nicht.
+ProductRefError=Zeile %s: Die Produktreferenz <b>%s</b> existiert nicht.
+catCompanyRefError=Zeile %s: Die Kundenkategorie <b>%s</b> existiert nicht.
+ProjectRefError=Zeile %s: Die Projektreferenz <b>%s</b> existiert nicht.
+countryCodefError=Zeile %s: Der Ländercode <b>%s</b> existiert nicht.
+priorityRankNumberError=Zeile %s: Die Prioritätsstufe <b>%s</b> ist keine gültige Zahl.
+priorityRankNumberLevelPrioError=Zeile %s: Die Prioritätsstufe <b>%s</b> muss zwischen 1 und 5 liegen.
+priorityRankNumberLevelNegativeValueError=Zeile %s: Die Prioritätsstufe <b>%s</b> muss zwischen 1 und 5 liegen.<br> Lassen Sie diese Spalte leer, wenn Sie keine Priorität zuweisen möchten.
+reductionTypeNumericError=Zeile %s: Die Reduzierung <b>%s</b> ist keine gültige Zahl.
+productPriceAndRefProductNotPresentError=Zeile %s: Die Spalte Produktpreis ist ausgefüllt <b>%s</b>, aber Sie haben die Produktreferenz für diese Zeile nicht ausgefüllt.
+productPriceTypeNumericError=Zeile %s: Der Produktpreis <b>%s</b> ist keine gültige Zahl.
+FromQtyTypeNumericError=Zeile %s: Die Spalte Ab Menge <b>%s</b> ist keine gültige Zahl.
+productReducAmountTypeNumericError=Zeile %s: Der feste Rabattbetrag <b>%s</b> ist keine gültige Zahl.
+atLeastOneofThemToRuleTheProductError=Zeile %s: Sie müssen mindestens eines dieser Felder definieren: <b>Rabatt in Prozent</b>, <b>Der anzuwendende Nettopreis</b>, <b>Der feste Rabattbetrag</b>.
+NoPriceIfNoProductInsertedError=Zeile %s: Die Zelle <b>anzuwendender Nettopreis</b> ist ausgefüllt, aber nicht die zugehörige Zelle <b>Produktreferenz</b>.
+NoReductionError=Zeile %s: Die Zelle <b>Rabatt in Prozent</b> darf nicht leer sein.
+cTypeEntError=Zeile %s: Der Drittentyp: <b>%s</b> existiert nicht.
+dateFromFormatError=Zeile %s: Das Startdatum: <b>%s</b> ist nicht im richtigen Format TT/MM/JJJJ.
+dateToFormatError=Zeile %s: Das Enddatum: <b>%s</b> ist nicht im richtigen Format TT/MM/JJJJ.
+CreateDiscountRuleError=Zeile %s: Die Erstellung der Preisregel: %s ist fehlgeschlagen. <br>SQL-Fehler: %s.<br>
+CSVDiscountRuleCreateSuccess=Zeile %s: Preisregel erstellt: %s.
 
 ##
-# Fields
+# Felder
 ##
-label=Libellé
-refProject= Référence projet
-refProduct=Référence produit
-refCompany=Référence client
-refCountry=Référence pays
-priorityRank= Priorité
-cTypeEnt=Type de tiers
-allCategoryProduct=Catégorie de produit
-allCategoryCompany=Catégorie de client
-reduction=Remise en pourcentage
-fromQuantity=À partir de la quantité
-productPrice=Prix HT à appliquer
-productReductionAmount=Montant de remise fixe
-dateFrom=Date de début d'application de la règle
-dateTo=Date de fin d'application de la règle
-activate=Activation
+label=Bezeichnung
+refProject=Projektreferenz
+refProduct=Produktreferenz
+refCompany=Kundenreferenz
+refCountry=Länderreferenz
+priorityRank=Priorität
+cTypeEnt=Drittentyp
+allCategoryProduct=Produktkategorie
+allCategoryCompany=Kundenkategorie
+reduction=Rabatt in Prozent
+fromQuantity=Ab Menge
+productPrice=Anzuwendender Nettopreis
+productReductionAmount=Fester Rabattbetrag
+dateFrom=Startdatum der Regelanwendung
+dateTo=Enddatum der Regelanwendung
+activate=Aktivierung
 
 #
-# Desc
+# Beschreibungen
 #
-labelDesc       =Libellé de la remise de prix
-refProjectDesc  =Référence du projet
-refProductDesc  =Référence du produit
-refCompanyDesc  =Référence du client
-priorityRankDesc=Priorité format numérique de 1 à 5. Vide si pas de priorité.
-cTypeEntDesc=Libellé du type de tiers
-allCategoryProductDesc= Liste des catégories de produits.<br>ex: CAT01,CAT02
-allCategoryCompanyDesc=Liste des catégories de clients.<br>ex: CAT01,CAT02
-reductionDesc=Numérique
-fromQuantityDesc=Numérique
-productPriceDesc=Numérique
-productReductionAmountDesc=Numérique
-dateFromDesc=Date au format jj/mm/aaaa
-dateToDesc=Date au format jj/mm/aaaa
-activateDesc=vide/0 :  désactivé  1  : activé
+labelDesc=Bezeichnung der Preisreduzierung
+refProjectDesc=Projektreferenz
+refProductDesc=Produktreferenz
+refCompanyDesc=Kundenreferenz
+priorityRankDesc=Priorität numerisches Format von 1 bis 5. Leer wenn keine Priorität.
+cTypeEntDesc=Bezeichnung des Drittentyps
+allCategoryProductDesc=Liste der Produktkategorien.<br>z.B.: CAT01,CAT02
+allCategoryCompanyDesc=Liste der Kundenkategorien.<br>z.B.: CAT01,CAT02
+reductionDesc=Numerisch
+fromQuantityDesc=Numerisch
+productPriceDesc=Numerisch
+productReductionAmountDesc=Numerisch
+dateFromDesc=Datum im Format TT/MM/JJJJ
+dateToDesc=Datum im Format TT/MM/JJJJ
+activateDesc=leer/0: deaktiviert 1: aktiviert
 
 
-DiscountRuleImpStep_SelectFile = Etape 1 : Téléverser le fichier
-DiscountRuleImpStep_Import = Etape 2 : Résultats
-DiscountRuleImpConfYourImport = Paramètres de l'import
-TokenError = Jeton de sécurité invalide
-ImportResults = Résultats de l'import
-XErrors = %s Erreur(s)
-XDiscountsRulesImported = %s règle(s) de remise importée(s)
-importAborted = Import interrompue
+DiscountRuleImpStep_SelectFile = Schritt 1: Datei hochladen
+DiscountRuleImpStep_Import = Schritt 2: Ergebnisse
+DiscountRuleImpConfYourImport = Importeinstellungen
+TokenError = Ungültiges Sicherheitstoken
+ImportResults = Import-Ergebnisse
+XErrors = %s Fehler
+XDiscountsRulesImported = %s Rabattregel(n) importiert
+importAborted = Import abgebrochen
