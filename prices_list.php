@@ -228,7 +228,7 @@ if (isset($extrafields->attributes[$object->table_element]['label']) && is_array
 	foreach ($extrafields->attributes[$object->table_element]['label'] as $key => $val)
 	{
 		if (!empty($extrafields->attributes[$object->table_element]['list'][$key]))
-			$arrayfields["ef.".$key] = array('label'=>$extrafields->attributes[$object->table_element]['label'][$key], 'checked'=>(($extrafields->attributes[$object->table_element]['list'][$key] < 0) ? 0 : 1), 'position'=>$extrafields->attributes[$object->table_element]['pos'][$key], 'enabled'=>(abs($extrafields->attributes[$object->table_element]['list'][$key]) != 3 && $extrafields->attributes[$object->table_element]['perms'][$key]));
+			$arrayfields["ef.".$key] = array('label'=>$extrafields->attributes[$object->table_element]['label'][$key], 'checked'=>(((int) dol_eval($extrafields->attributes[$object->table_element]['list'][$key], 1, 1, '1') < 0) ? 0 : 1), 'position'=>$extrafields->attributes[$object->table_element]['pos'][$key], 'enabled'=>(abs((int) dol_eval($extrafields->attributes[$object->table_element]['list'][$key], 1)) != 3 && dol_eval($extrafields->attributes[$object->table_element]['perms'][$key], 1)));
 	}
 }
 $object->fields = dol_sort_array($object->fields, 'position');
