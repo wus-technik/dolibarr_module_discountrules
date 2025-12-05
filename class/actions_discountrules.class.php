@@ -585,8 +585,10 @@ class Actionsdiscountrules extends \discountrules\RetroCompatCommonHookActions
 		//Recup le taux selectionné + Taux minimum
 			$options = array(0 => 'MarkRate', 1 => 'MarginRate');
 			$selectedRateKey = getDolGlobalInt('DISCOUNTRULES_MARKUP_MARGIN_RATE');
-			// Fallback auf gültigen String, falls Konstante fehlt/ungültig ist
-			$valueConfMarkupMarginRate = $options[$selectedRateKey] ?? 'MarginRate';
+			if (!array_key_exists($selectedRateKey, $options)) {
+				$selectedRateKey = 1; // Standard: MarginRate
+			}
+			$valueConfMarkupMarginRate = $options[$selectedRateKey];
 		if (intval(DOL_VERSION) <= 19)
 		{
 			$minimumRate = (float)getDolGlobalString('DISCOUNTRULES_MINIMUM_RATE');
