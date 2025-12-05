@@ -93,6 +93,11 @@ class DiscountRule extends CommonObject
 
     public $fk_country;
     public $fk_company;
+	/**
+	 * @var int
+	 * @deprecated Use $fk_company
+	 */
+	public $fk_soc;
 	public $fk_c_typent;
 
     public $fk_product;
