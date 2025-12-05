@@ -35,6 +35,9 @@ include_once DOL_DOCUMENT_ROOT .'/core/modules/DolibarrModules.class.php';
  */
 class moddiscountrules extends DolibarrModules
 {
+	public $special = 0;
+	public $dictionnaries = array();
+	public $menus = array();
 	// @codingStandardsIgnoreEnd
 	/**
 	 * Constructor. Define names, constants, directories, boxes, permissions
