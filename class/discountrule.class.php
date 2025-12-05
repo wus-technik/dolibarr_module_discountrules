@@ -99,6 +99,11 @@ class DiscountRule extends CommonObject
 	 */
 	public $fk_soc;
 	public $fk_c_typent;
+	/**
+	 * Holds last executed query (legacy)
+	 * @var string
+	 */
+	public $lastquery;
 
     public $fk_product;
 	/** @var Product $product */
