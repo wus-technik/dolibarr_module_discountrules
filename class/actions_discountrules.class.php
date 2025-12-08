@@ -562,10 +562,12 @@ class Actionsdiscountrules extends \discountrules\RetroCompatCommonHookActions
                             } else {
 							    $sql = 'SELECT COUNT(*) as nbRules FROM '.$db->prefix().'discountrule drule WHERE '.$column.' = '.intval($pObject->id).';';
                             }
-							$resql= $pObject->db->query($sql);
-							if($resql>0){
+							$resql = $pObject->db->query($sql);
+							if ($resql) {
 								$obj = $pObject->db->fetch_object($resql);
-								$nbRules = $obj->nbRules;
+								if ($obj) {
+									$nbRules = (int) $obj->nbRules;
+								}
 							}
 
 							if ($nbRules > 0) $parameters['head'][$h][1] = $langs->trans('TabTitleDiscountRule') . ' <span class="badge">' . ($nbRules) . '</span>';
