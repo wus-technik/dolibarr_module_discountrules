@@ -388,13 +388,13 @@ class Actionsdiscountrules extends \discountrules\RetroCompatCommonHookActions
 							}
 						}
 
-						if ($('#idprod') == undefined || $('#qty') == undefined) {
-							return 0;
-						}
+					if ($('#idprod') == undefined || $('#qty') == undefined) {
+						return 0;
+					}
 
-						let defaultCustomerReduction = '<?php print floatval($object->thirdparty->remise_percent); ?>';
-						let fk_company = '<?php print intval($object->socid); ?>';
-						let fk_project = '<?php print intval($object->fk_project); ?>';
+					let defaultCustomerReduction = '<?php print floatval(!empty($object->thirdparty) && isset($object->thirdparty->remise_percent) ? $object->thirdparty->remise_percent : 0); ?>';
+					let fk_company = '<?php print intval($object->socid); ?>';
+					let fk_project = '<?php print intval($object->fk_project); ?>';
 						DiscountRule.discountUpdate($('#idprod').val(), fk_company, fk_project, '#qty', subpriceSelector, remiseSelector, defaultCustomerReduction, '<?php echo $dateTocheck; ?>');
 					});
 				});
@@ -636,7 +636,7 @@ class Actionsdiscountrules extends \discountrules\RetroCompatCommonHookActions
             if(!empty($parameters['line']->fk_product)){
                 $parameters['line']->fetch_product();
             }
-            if (!empty($object->thirdparty->array_options['options_discountrules_min_markup_margin_percent'])) {
+            if (!empty($object->thirdparty) && !empty($object->thirdparty->array_options['options_discountrules_min_markup_margin_percent'])) {
                 $minimumRate = (float) $object->thirdparty->array_options['options_discountrules_min_markup_margin_percent'];
             } elseif (!empty($parameters['line']->fk_product) && !empty($parameters['line']->product->array_options['options_discountrules_min_markup_margin_percent'])) {
                 $minimumRate = (float) $parameters['line']->product->array_options['options_discountrules_min_markup_margin_percent'];
