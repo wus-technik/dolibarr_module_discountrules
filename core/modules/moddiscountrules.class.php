@@ -359,7 +359,8 @@ class moddiscountrules extends DolibarrModules
 			'url'=>'/discountrules/discount_rules_import.php?datatoimport=importdiscountrules&mainmenu=tools',
 			'langs'=>'importdiscountrules@discountrules', // Lang file to use (without .lang) by module. File must be in langs/code_CODE/ directory.
 			'position'=>1000 + $r,
-			'enabled'=>'isModEnabled("discountrules")', // Define condition to show or hide menu entry. Use '$conf->importdiscountrules->enabled' if entry must be visible if module is enabled.
+			// Parent menu tools/import only exists with module Import or Export enabled (see eldy.lib.php) (otherwise core logs "parent was not found" on every page)
+			'enabled'=>'isModEnabled("discountrules") && (isModEnabled("import") || isModEnabled("export"))', // Define condition to show or hide menu entry. Use '$conf->importdiscountrules->enabled' if entry must be visible if module is enabled.
 			'perms'=>'$user->hasRight("discountrules", "create")',			                // Use 'perms'=>'$user->rights->cliaufildesmatieres->level1->level2' if you want your menu with a permission rules
 			'target'=>'',
 			'user'=>0, // 0=Menu for internal users, 1=external users, 2=both
