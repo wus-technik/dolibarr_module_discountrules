@@ -2,6 +2,7 @@
 
 
 ## Not Released
+- FIX : Import menu entry only shown when module Import or Export is enabled (its parent menu tools/import does not exist otherwise, warning "parent was not found" on every page) - *23/11/2026*
 - NEW : Min markup/margin extrafield now shows on customer third parties (wrong display condition on Societe object) - *05/12/2025* - 2.28.0
 
 ## RELEASE 2.27
